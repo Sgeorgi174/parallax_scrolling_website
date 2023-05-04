@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style__forest.css">
+    <script src="./libs/gsap/gsap.min.js" defer></script>
+    <script src="./libs/gsap/ScrollTrigger.min.js"></script>
+    <script src="./libs/gsap/ScrollSmoother.min.js"></script>
+    <script src="./js/app-forest.js" defer></script>
+    <title>parallax_scrolling_website</title>
+
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="content">
+            <nav class="nav">
+                <a href="./index.html" class="nav__title">parallax</a>
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="./forest.html" class="nav__link">FOREST</a></li>
+                    <li class="nav__item"><a href="./witcher.html" class="nav__link">WITCHER</a></li>
+                </ul>
+            </nav>            
+            <header class="header">
+                <div class="layers">
+                    <div class="layers__heading">
+                        <div class="layers__caption">Welcome to Parralax</div>
+                        <div class="layers__title">Fairy Forest</div>
+                    </div>
+                    <div class="layer layers__base" style="background-image: url(./img/forest/layer-base.png);"></div>
+                    <div class="layer layers__middle" style="background-image: url(./img//forest/layer-middle.png);"></div>
+                    <div class="layer layers__front" style="background-image: url(./img/forest/layer-front.png);"></div>
+                </div>
+            </header>
+
+            <main class="main">
+                <article class="main__article" style="background-image: url(./img/forest/dungeon.jpg)">
+                    <div class="main__article-content">
+                        <h2 class="main__article-heading">To be continued</h2>
+                        <p class="main__article-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis asperiores unde eius labore exercitationem, ex quibusdam minima recusandae harum dicta qui ab sint sed ullam a optio nulla maxime earum nostrum officia.</p>
+                        <p class="main__article-copy">© Fairy Forest</p>
+                    </div>
+                </article>
+            </main>    
+        </div>
+    </div>
+</body>
+</html>

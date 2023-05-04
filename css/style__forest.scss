@@ -1,0 +1,141 @@
+@import 'vars.scss';
+@import 'nav';
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #010101 ;
+    color: #fff;
+    font-family: raleway_f, sans-serif;
+    line-height: 1.55;
+}
+
+.content {
+    will-change: transform;
+}
+
+.header {
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        z-index: 100;
+        width: 100%;
+        height: calc($index * 10 );
+        background-image: url(../img/forest/ground.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        bottom: calc($index * -4.5);
+    }
+}
+
+.layer {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    z-index: 2;
+}
+
+.layers {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+
+    &__heading {
+        z-index: 1;
+        transform: translate3d(0, calc(var(--scrollTop) / 2), 0);
+        @include addTransition();
+        text-transform: uppercase;
+        font-weight: 900;
+        color: $textColor;
+        text-shadow: 0 0 15px #9e7d35;
+    }
+
+    &__base {
+        transform: translate3d(0, calc(var(--scrollTop) / 1.6), 0);
+        @include addTransition();
+        z-index: 0;
+    }
+
+    &__middle {
+        transform: translate3d(0, calc(var(--scrollTop) / 2.5), 0);
+        @include addTransition();
+    }
+
+    &__front {
+        transform: translate3d(0, calc(var(--scrollTop) / 5.7), 0);
+        @include addTransition();
+    }
+
+    &__title {
+        font-size: calc($index * 2.7) ;
+        letter-spacing: calc($index / 2.25 );
+    }
+
+    &__caption {
+        font-size: calc($index / 1.2 ) ;
+        letter-spacing: calc($index / 3.5 );
+        margin-top: calc($index * -.75);        
+    }
+}
+
+
+
+
+.main__article {
+    position: relative;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: $textColor;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+    &-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+   &-heading {
+    text-transform: uppercase;
+    font-size: calc($index * 1.8);
+    text-align: center;
+    text-shadow: 0 0 15px #9e7d35;
+    transform: translate3d(0, calc(var(--scrollTop) / -9), 0);
+    @include addTransition();
+   }
+
+   &-text {
+    text-align: center;
+    max-width: calc($index * 30) ;
+    font-size: calc($index * .9);
+    margin-top: calc($index * 1.3);
+    transform: translate3d(0, calc(var(--scrollTop) / -9), 0);
+    @include addTransition();
+   }
+
+   &-copy {
+    position: absolute;
+    text-align: center;
+    bottom: calc($index * 1);
+    opacity: 0.45;
+    font-size: calc($index * .75);
+   }
+}
