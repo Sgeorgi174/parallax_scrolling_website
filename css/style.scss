@@ -21,20 +21,41 @@ body {
     padding-top: calc($index * 5);
     max-width: 100vw;
     overflow: hidden;
+    height: calc(100vh - $index * 2);
 
     &__item {
+        display: block;
         grid-column: span 6;
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
         height: calc($index * 20);
         border-radius: 8px;
+        text-decoration: none;
         z-index: 12;
-        transition: all 0.3s ease-in-out;
+        position: relative;
+        transition: text-shadow 0.25s ease-in-out;
 
         display: flex;
         justify-content: center;
         align-items: center;
+        &::after {
+            content: '';
+            position: absolute;
+            box-shadow: 6px 15px 45px 22px rgba(158, 125, 53, 0.39);
+            opacity: 0;
+            transition: opacity 0.25s ease-in-out;
+            width: 100%;
+            height: 100%;
+        }
+
+        &:hover{
+            text-shadow: 0 0 15px #9e7d35;
+        }
+
+        &:hover::after{
+            opacity: 1;
+        }
 
         &-1 {
             background-image: url(../img/item1.png);
@@ -43,10 +64,6 @@ body {
 
         &-2 {
             background-image: url(../img/item2.jpg);
-        }
-
-        &-link {
-            text-decoration: none;
         }
     }
 
@@ -58,11 +75,6 @@ body {
         color: $textColor;
     }
 
-}
-
-.main__item:hover {
-    box-shadow: 0 0 50px #9e7d35;
-    text-shadow: 0 0 15px #9e7d35;
 }
 
 .particles {
