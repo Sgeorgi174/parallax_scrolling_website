@@ -9,3 +9,9 @@
 }
 
 $index: calc(1vw + 1vh);
+$textColor: #e7e7d3 ;
+
+@mixin addTransition {
+    transition: transform .75s cubic-bezier(.075, .5, 0, 1);
+    will-change: transform;
+}
